@@ -1,0 +1,64 @@
+<?php include 'sever.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Registration Page</title>
+    <style>
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-body">
+        <div class="form-container">
+            <h3>Register Here</h3>
+            <?php if ($error_message): ?>
+                <p class="error"><?php echo $error_message; ?></p>
+            <?php endif; ?>
+            <form action="register.php" method="POST">
+                <div class="form-group">
+                    <label for="username" class="visually-hidden">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="visually-hidden">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="visually-hidden">Password:</label>
+                    <input type="password" name="password" id="pass" class="pass" placeholder="Password">
+                    <i class="fa-solid fa-eye toggle-password" id="toggle-Pass"></i>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="visually-hidden">Confirm Password:</label>
+                    <input type="password" name="confirm_password" id="Cpass" class="pass"
+                        placeholder="Comfirm Password">
+                    <i class="fa-solid fa-eye togglepassword" id="toggle-Pass"></i>
+                </div>
+                <div class="form-btn">
+                    <button type="submit" class="btn-form btn-primary" name="register">Register</button>
+                </div>
+                <div class="form-footer">
+                    <!-- <p>By clicking Register, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy
+                            Policy</a></p> -->
+                    <p>Already Registered?<a href="login.php"> Login Here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
